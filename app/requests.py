@@ -22,40 +22,40 @@ def get_news(category):
             news_results = process_results(news_articles_list)
     # print("Result",news_results)
     return news_results
-# def process_results(news_list):
-#     '''
-#     Function  that processes the news result and transform them to a list of Objects
-#     Args:
-#         news_list: A list of dictionaries that contain news details
-#     Returns :
-#         news_results: A list of news objects
-#     '''
-#     news_results = []
-#     for news_item in news_list:
-#         id = news_item.get('id')
-#         title = news_item.get('title')
-#         image = news_item.get('urlToImage')
-#         description = news_item.get('description')
-#         date = news_item.get('date')
-#         if title:
-#             news_object = News(title,id,image,description,date)
-#             news_results.append(news_object)
-#     return news_results
+def process_results(news_list):
+    '''
+    Function  that processes the news result and transform them to a list of Objects
+    Args:
+        news_list: A list of dictionaries that contain news details
+    Returns :
+        news_results: A list of news objects
+    '''
+    news_results = []
+    for news_item in news_list:
+        id = news_item.get('id')
+        title = news_item.get('title')
+        image = news_item.get('urlToImage')
+        description = news_item.get('description')
+        date = news_item.get('date')
+        if title:
+            news_object = News(title,id,image,description,date)
+            news_results.append(news_object)
+    return news_results
 # def get_articles(articles):
-#     get_news_details_url = articlesbase_url.format(articles,api_key)
-#     with urllib.request.urlopen(get_news_details_url) as url:
-#         news_details_data = url.read()
-#         news_details_response = json.loads(news_details_data)
-#         news_object = None
-#         if news_details_response:
-#             title = news_item.get('title')
-#             image = news_item.get('urlToImage')
-#             description = news_item.get('description')
-#             date = news_item.get('publishedAt')
-#             articles = news_item.get('url')
-#             id = news_item.get('id')
-#             news_object = News(title,id,image,description,date,articles)
-#     return news_object
+    get_news_details_url = articlesbase_url.format(articles,api_key)
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+        news_object = None
+        if news_details_response:
+            title = news_item.get('title')
+            image = news_item.get('urlToImage')
+            description = news_item.get('description')
+            date = news_item.get('publishedAt')
+            articles = news_item.get('url')
+            id = news_item.get('id')
+            news_object = News(title,id,image,description,date,articles)
+    return news_object
 # def get_category(category_name):
 #     get_category_url = base_url.format(category_name,api_key)
 #     with urllib.request.urlopen(get_category_url) as url:
