@@ -3,10 +3,14 @@
     {% for news in news_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
             <img src="{{ news.image }}" alt="{{ news.title }} image" class="img-responsive">
-            <li class="text-center">
+            <div class="text-center">
                 <a  href="{{news.articles}}" target="_blank" >
                     {{ news.title}}</a>
-            </li>
+                    </div>
+        </div>
+        <div class="footer">
+            Published at: {{news.date}}
         </div>
     {% endfor %}
+
 {%endmacro%}

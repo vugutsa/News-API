@@ -16,7 +16,7 @@
 <body>
     <!-- Styles block -->
     {% block styles%}
-    {{ super() }}
+         {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
     {% endblock %}
     <!-- Content block -->
@@ -26,22 +26,20 @@
             <input type="text" name="news_query" placeholder="Search for News" class="form_control">
             <input type="submit" value="Submit" class="btn btn-default">
         </form>
-    </div>
+   
     <!-- Popular News -->
     <h3> Independent News</h3>
-    <ul>
+    <hr>
         {{ macro.displayNewsList(independent)}}
-    </ul>
     <!-- Upcoming News  -->
     <h3> Techcrunch News</h3>
-    <ul>
+    <hr>
         {{ macro.displayNewsList(techcrunch)}}
-    </ul>
     <!-- Now showing News -->
-    <h3>Focus News</h3>
-    <ul>
-        {{ macro.displayNewsList(focus)}}
-    </ul>
+    <h3 id="sources">Focus News</h3>
+    <hr>
+        <br>{{ macro.displayNewsList(focus)}}
     {% endblock%}
+    </div>
 </body>
 </html>

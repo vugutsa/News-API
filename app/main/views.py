@@ -13,6 +13,7 @@ def index():
     focus = get_news('focus')
     title = 'Home - Welcome to News website online'
     search_news = request.args.get('news_query')
+
     if search_news:
         return redirect(url_for('.search', category_name = search_news))
     else:
@@ -65,7 +66,7 @@ def search(category_name):
     View function to display the search results
     '''
     category_list = category.split(" category_name")
-    category_format = "+".join(news_list
+    category_format = "+".join(news_list)
     searched_news = search_category(category_format)
     title = f'search results for {category_name}'
     return render_template('search.html',news = searched_news)
