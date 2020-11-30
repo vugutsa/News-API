@@ -28,17 +28,18 @@
         </form>
    
     <!-- Popular News -->
-    <h3> Independent News</h3>
+    <h3 class= "text text-center" style="font-weight: bolder; font-size: 50px;"> Independent News</h3>
     <hr>
         {{ macro.displayNewsList(independent)}}
     <!-- Upcoming News  -->
-    <h3> Techcrunch News</h3>
+    <h3 class= "text text-center" style="font-weight: bolder; font-size: 50px;"> Techcrunch News</h3>
     <hr>
         {{ macro.displayNewsList(techcrunch)}}
     <!-- Now showing News -->
-    <h3 id="sources">Focus News</h3>
+    <h3 class = "text text-center" style="font-weight: bolder; font-size: 50px;">Focus News</h3>
     <hr>
         <br>{{ macro.displayNewsList(focus)}}
+        
     {% endblock%}
     </div>
 </body>

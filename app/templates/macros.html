@@ -1,7 +1,7 @@
 <!-- Displaying reviews macro -->
 {% macro displayNewsList(news_list) %}
     {% for news in news_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
+        <div class="col-md-12 col-md-4 col-md- col-md-4 news-card">
             <img src="{{ news.image }}" alt="{{ news.title }} image" class="img-responsive">
             <div class="text-center">
                 <a  href="{{news.articles}}" target="_blank" >
