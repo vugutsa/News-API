@@ -17,7 +17,7 @@
     <!-- Styles block -->
     {% block styles%}
     {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
     {% endblock %}
     <!-- Content block -->
     {% block content %}
@@ -33,19 +33,11 @@
         {{ macro.displayNewsList(independent)}}
     </ul>
     <!-- Upcoming News  -->
-    <h3> Lowendbox.com News</h3>
+    <h3> Techcrunch News</h3>
     <ul>
-        {{ macro.displayNewsList(lowendbox)}}
+        {{ macro.displayNewsList(techcrunch)}}
     </ul>
     <!-- Now showing News -->
-    <h3>Forbes News</h3>
-    <ul>
-        {{ macro.displayNewsList(forbes)}}
-    </ul>
-    <h3>Cointelegraph News</h3>
-    <ul>
-        {{ macro.displayNewsList(cointelegraph)}}
-    </ul>
     <h3>Focus News</h3>
     <ul>
         {{ macro.displayNewsList(focus)}}

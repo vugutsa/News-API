@@ -9,7 +9,7 @@ def index():
     '''
     # Getting news sources
     independent = get_news('independent')
-    techrunch = get_news('techrunch')
+    techcrunch = get_news('techcrunch')
     focus = get_news('focus')
     title = 'Home - Welcome to News website online'
     search_news = request.args.get('news_query')
@@ -17,15 +17,15 @@ def index():
         return redirect(url_for('.search', category_name = search_news))
     else:
         return render_template('index.html', title = title, independent = independent, focus = focus, techcrunch = techcrunch)
-# @main.route('/article/')
-# def article():
+# @main.route('/articles/')
+# def articles():
 #     '''
 #     View article page function that returns the news articles details page and its data
 #     '''
-#     news = get_article(article)
+#     news = get_articles(articles)
 #     title = f'{news.title}'
-#     article = Article.get_article(news.url)
-#     return render_template('article.html',title = title,news = news,article = article)
+#     articles = Articles.get_articles(news.url)
+#     return render_template('articles.html',title = title,news = news,articles = articles)
 # @main.route('/categories/<category_name>')
 # def category(category_name):
 #     '''
