@@ -56,32 +56,32 @@ def process_results(news_list):
             id = news_item.get('id')
             news_object = News(title,id,image,description,date,articles)
     return news_object
-# def get_category(category_name):
-#     get_category_url = base_url.format(category_name,api_key)
-#     with urllib.request.urlopen(get_category_url) as url:
-#         get_category_data = url.read()
-#         get_category_response = json.loads(get_category_data)
-#         get_category_results = None
-#         if get_category_response['articles']:
-#             get_category_list = get_category_response['articles']
-#             get_category_results = process_results(get_category_list)
-#     return get_category_results
+def get_category(category_name):
+    get_category_url = base_url.format(category_name,api_key)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_category_response = json.loads(get_category_data)
+        get_category_results = None
+        if get_category_response['articles']:
+            get_category_list = get_category_response['articles']
+            get_category_results = process_results(get_category_list)
+    return get_category_results
 
 
-# def search_articles(articles_name):
-#     search_articles_url = 'http://newsapi.org/v2/everything/search?q={}&apiKey=&query={}'.format(api_key,movie_name)
-#     with urllib.request.urlopen(search_articles_url) as url:
-#         search_articles_data = url.read()
-#         search_articles_response = json.loads(search_aricles_data)
+def search_articles(articles_name):
+    search_articles_url = 'http://newsapi.org/v2/everything/search?q={}&apiKey=&query={}'.format(api_key,movie_name)
+    with urllib.request.urlopen(search_articles_url) as url:
+        search_articles_data = url.read()
+        search_articles_response = json.loads(search_aricles_data)
 
-#         search_articles_results = None
+        search_articles_results = None
 
-#         if search_articles_response['results']:
-#             search_articles_list = search_aricles_response['results']
-#             search_articles_results = process_results(search_articles_list)
+        if search_articles_response['results']:
+            search_articles_list = search_aricles_response['results']
+            search_articles_results = process_results(search_articles_list)
 
 
-#     return search_articles_results
+    return search_articles_results
 
 
 
