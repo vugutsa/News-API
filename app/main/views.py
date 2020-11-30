@@ -26,14 +26,14 @@ def articles():
     title = f'{news.title}'
     articles = Articles.get_articles(news.url)
     return render_template('articles.html',title = title,news = news,articles = articles)
-# @main.route('/categories/<category_name>')
-# def category(category_name):
-#     '''
-#     method that returns the categories page
-#     '''
-#     category = get_category(category_name)
-#     title = f'{category_name}'
-#     return render_template('categories.html', title = title, category = category)
+@main.route('/categories/<category_name>')
+def category(category_name):
+    '''
+    method that returns the categories page
+    '''
+    category = get_category(category_name)
+    title = f'{category_name}'
+    return render_template('categories.html', title = title, category = category)
 # @main.route('/categories/sport')
 # def sports():
 #     '''
