@@ -17,15 +17,15 @@ def index():
         return redirect(url_for('.search', category_name = search_news))
     else:
         return render_template('index.html', title = title, independent = independent, focus = focus, techcrunch = techcrunch)
-# @main.route('/articles/')
-# def articles():
-#     '''
-#     View article page function that returns the news articles details page and its data
-#     '''
-#     news = get_articles(articles)
-#     title = f'{news.title}'
-#     articles = Articles.get_articles(news.url)
-#     return render_template('articles.html',title = title,news = news,articles = articles)
+@main.route('/articles/')
+def articles():
+    '''
+    View article page function that returns the news articles details page and its data
+    '''
+    news = get_articles(articles)
+    title = f'{news.title}'
+    articles = Articles.get_articles(news.url)
+    return render_template('articles.html',title = title,news = news,articles = articles)
 # @main.route('/categories/<category_name>')
 # def category(category_name):
 #     '''
@@ -34,14 +34,6 @@ def index():
 #     category = get_category(category_name)
 #     title = f'{category_name}'
 #     return render_template('categories.html', title = title, category = category)
-# @main.route('/categories/technology')
-# def technology():
-#     '''
-#     method that returns the categories page
-#     '''
-#     technology = get_category('technology')
-#     title = 'TECHNOLOGY'
-#     return render_template('categories.html', title = title, technology = technology)
 # @main.route('/categories/sport')
 # def sports():
 #     '''
@@ -72,7 +64,7 @@ def index():
 #     View function to display the search results
 #     '''
 #     category_list = category.split(" category_name")
-#     category_format = "+".join(news_list)
+#     category_format = "+".join(news_list
 #     searched_news = search_category(category_format)
 #     title = f'search results for {category_name}'
 #     return render_template('search.html',news = searched_news)
