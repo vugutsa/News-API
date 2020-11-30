@@ -34,14 +34,6 @@ def category(category_name):
     category = get_category(category_name)
     title = f'{category_name}'
     return render_template('categories.html', title = title, category = category)
-@main.route('/categories/sport')
-def sports():
-    '''
-    method that returns the categories page
-    '''
-    sports = get_category('sports')
-    title = 'SPORTS'
-    return render_template('categories.html', title = title, sports = sports)
 @main.route('/categories/entertainment')
 def entertainment():
     '''
@@ -50,6 +42,15 @@ def entertainment():
     sports = get_category('entertainment')
     title = 'ENTERTAINMENT'
     return render_template('categories.html', title = title, entertainment = entertainment)
+@main.route('/categories/sport')
+def sports():
+    '''
+    method that returns the categories page
+    '''
+    sports = get_category('sports')
+    title = 'SPORTS'
+    return render_template('categories.html', title = title, sports = sports)
+
 @main.route('/categories/business')
 def business():
     '''
@@ -58,16 +59,16 @@ def business():
     business = get_category('business')
     title = 'BUSINESS'
     return render_template('categories.html', title = title, business = business)
-# @main.route('/search/<category_name>')
-# def search(category_name):
-#     '''
-#     View function to display the search results
-#     '''
-#     category_list = category.split(" category_name")
-#     category_format = "+".join(news_list
-#     searched_news = search_category(category_format)
-#     title = f'search results for {category_name}'
-#     return render_template('search.html',news = searched_news)
+@main.route('/search/<category_name>')
+def search(category_name):
+    '''
+    View function to display the search results
+    '''
+    category_list = category.split(" category_name")
+    category_format = "+".join(news_list
+    searched_news = search_category(category_format)
+    title = f'search results for {category_name}'
+    return render_template('search.html',news = searched_news)
 
 
 
