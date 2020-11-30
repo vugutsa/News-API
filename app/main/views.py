@@ -34,30 +34,30 @@ def category(category_name):
     category = get_category(category_name)
     title = f'{category_name}'
     return render_template('categories.html', title = title, category = category)
-# @main.route('/categories/sport')
-# def sports():
-#     '''
-#     method that returns the categories page
-#     '''
-#     sports = get_category('sports')
-#     title = 'SPORTS'
-#     return render_template('categories.html', title = title, sports = sports)
-# @main.route('/categories/entertainment')
-# def entertainment():
-#     '''
-#     method that returns the categories page
-#     '''
-#     sports = get_category('entertainment')
-#     title = 'ENTERTAINMENT'
-#     return render_template('categories.html', title = title, entertainment = entertainment)
-# @main.route('/categories/business')
-# def business():
-#     '''
-#     method that returns the categories page
-#     '''
-#     business = get_category('business')
-#     title = 'BUSINESS'
-#     return render_template('categories.html', title = title, business = business)
+@main.route('/categories/sport')
+def sports():
+    '''
+    method that returns the categories page
+    '''
+    sports = get_category('sports')
+    title = 'SPORTS'
+    return render_template('categories.html', title = title, sports = sports)
+@main.route('/categories/entertainment')
+def entertainment():
+    '''
+    method that returns the categories page
+    '''
+    sports = get_category('entertainment')
+    title = 'ENTERTAINMENT'
+    return render_template('categories.html', title = title, entertainment = entertainment)
+@main.route('/categories/business')
+def business():
+    '''
+    method that returns the categories page
+    '''
+    business = get_category('business')
+    title = 'BUSINESS'
+    return render_template('categories.html', title = title, business = business)
 # @main.route('/search/<category_name>')
 # def search(category_name):
 #     '''
