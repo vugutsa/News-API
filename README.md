@@ -9,6 +9,12 @@
 * README.md
 * HTML 
 
+## Set up and installation
+- Clone this repository to a location in your file system;`git clone https://github.com/vugutsa/News-API.git`
+- Open terminal command line then navigate to the root folder of the application.`cd News API` on your browser.
+- Open `index.html`on your browser.
+
+
 ## Contact information
 For more information or inquires feel free to contact me on my email contact;
 * vugutsamercy84@gmail.com
